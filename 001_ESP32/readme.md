@@ -5,6 +5,8 @@
 创建时间   :2022年4月3日
 作者		:Vincent
 版本		:V1.0
+			
+		V1.1: 修改图片名称
 */
 ```
 
@@ -28,9 +30,9 @@ https://thonny.org/
 
 一路下一步就行。
 
-![](md_pic/pic (1).jpg)
+![](md_pic/pic1.jpg)
 
-![](md_pic/pic (2).jpg)
+![](md_pic/pic2.jpg)
 
 装完了。
 ## 语言及开发板设置
@@ -38,12 +40,12 @@ https://thonny.org/
 在工具栏选择“工具”，选择“设置”，如果是英文版则“Tool”，“Option”
 弹出设置窗口，在第一个选项卡”常规“里面有语言设置。
 
-![](md_pic/pic (3).jpg)
+![](md_pic/pic3.jpg)
 
 设置完了注意重启。
 选择第二栏解释器，选择开发板和端口。ESP32的板选择MicroPython(ESP32)，Pico的板选择MicroPython(Raspberry Pi Pico)
 
-![](md_pic/pic (4).jpg)
+![](md_pic/pic4.jpg)
 
 
 选择端口，建议使用Auto即自动选择端口。
@@ -58,7 +60,7 @@ https://thonny.org/
 
 选择端口和bin文件，选择安装。
 
-![](md_pic/pic (5).jpg)
+![](md_pic/pic5.jpg)
 
 ## 连接
 

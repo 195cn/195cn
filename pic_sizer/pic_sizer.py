@@ -9,6 +9,7 @@ import os
 import cv2
 
 DIR = "./001_ESP32/md_pic/"
+RENAME_FLAG = True
 
 # 获取文件夹下所有文件
 path = os.path.join(DIR)
@@ -35,6 +36,11 @@ def resize_pic(file, max_width):
     img = cv2.resize(img, (w, h))
     cv2.imwrite(file,img)
 
+def rename(file):
+    if RENAME_FLAG :
+        temp_name = file.replace(" ","").replace("(","").replace(")","")
+        os.rename(file, temp_name)
+
     pass
 
 
@@ -47,3 +53,4 @@ for i in img_list:
         # cv2.waitKey(0)
         # cv2.destroyAllWindows()
         resize_pic(DIR+i, 400)
+        rename(DIR+i)
