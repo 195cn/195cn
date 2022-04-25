@@ -8,15 +8,6 @@ import numpy as np
 import os
 import cv2
 
-DIR = "./001_ESP32/md_pic/"
-RENAME_FLAG = True
-
-# 获取文件夹下所有文件
-path = os.path.join(DIR)
-img_list = os.listdir(path)
-# print(img_list)
-
-
 def resize_pic(file, max_width):
     # 读取图片及尺寸
     img = cv2.imread(file)
@@ -34,19 +25,29 @@ def resize_pic(file, max_width):
     w = max_width
     print(w, h)
     img = cv2.resize(img, (w, h))
-    cv2.imwrite(file,img)
+    cv2.imwrite(file, img)
 
 def rename(file):
-    if RENAME_FLAG :
-        temp_name = file.replace(" ","").replace("(","").replace(")","")
+    if RENAME_FLAG:
+        temp_name = file.replace(" ", "").replace("(", "").replace(")", "")
         os.rename(file, temp_name)
 
     pass
 
 
+DIR = "./"
+RENAME_FLAG = True
+
+# 获取文件夹下所有文件
+path = os.path.join(DIR)
+img_list = os.listdir(path)
+# print(img_list)
+
 # 遍历所有图片
 for i in img_list:
-    if os.path.splitext(i)[1] == ".jpg":
+    # print(i)
+    end_str = os.path.splitext(i)[1]
+    if end_str == ".jpg" or end_str == ".jpeg":
         print(DIR + i)
         # img = cv2.imread(DIR + i)
         # cv2.imshow("", img)
