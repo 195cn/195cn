@@ -90,9 +90,9 @@ void outline_display(int num)
     display.setTextColor(SSD1306_WHITE); // Draw white text
     display.setCursor(0, 0);             // Start at top-left corner
     if (num == 0)
-        display.println("< 100 ohm");
+        display.println("< 50 ohm");
     else
-        display.println("> 2M ohm");
+        display.println("> 2.5M ohm");
     display.display();
 }
 
@@ -109,13 +109,13 @@ void read_ohm()
     digitalWrite(OHM_1M_PIN, HIGH);
     // digitalWrite(ADC_PIN, LOW);
     delay(READTIME);
-    temp = adc_fliter(ADC_PIN);
+    temp = voltage_fliter(ADC_PIN);
 
-    if (temp < 384)
+    if (temp < 360)
     {
         ;
     }
-    else if (temp > 2950)
+    else if (temp > 2400)
     {
         outline_display(1);
         return;
@@ -136,9 +136,9 @@ void read_ohm()
 
     digitalWrite(OHM_100K_PIN, HIGH);
     delay(READTIME);
-    temp = adc_fliter(ADC_PIN);
+    temp = voltage_fliter(ADC_PIN);
 
-    if (temp < 384)
+    if (temp < 360)
     {
         ;
     }
@@ -159,9 +159,9 @@ void read_ohm()
 
     digitalWrite(OHM_10K_PIN, HIGH);
     delay(READTIME);
-    temp = adc_fliter(ADC_PIN);
+    temp = voltage_fliter(ADC_PIN);
 
-    if (temp < 384)
+    if (temp < 360)
     {
         ;
     }
@@ -181,9 +181,9 @@ void read_ohm()
 
     digitalWrite(OHM_1K_PIN, HIGH);
     delay(READTIME);
-    temp = adc_fliter(ADC_PIN);
+    temp = voltage_fliter(ADC_PIN);
 
-    if (temp < 384)
+    if (temp < 150)
     {
         outline_display(0);
         return;
@@ -199,23 +199,22 @@ void read_ohm()
 
 int cal_ohm(int adc, int r0)
 {
-    return (int)(adc / (4095.0 - adc) * r0);
+    return (int)(adc / (3300.0 - adc) * r0);
 }
 
-int adc_fliter(int pin)
+int voltage_fliter(int pin)
 {
     int temp = 0;
-    int voltag = 0;
 
     for (int i = 0; i < 5; i++)
     {
-        temp += analogRead(pin);
+        temp += analogReadMilliVolts(pin);
         delay(10);
     }
 
-    temp = temp / 5 + 180;
-    voltag = map(temp, 0, 4096, 0, 3300);
-    Serial.printf("[analogRead]ADC:%d VOL:%d\n", temp, voltag);
+    temp = temp / 5;
+
+    Serial.printf("[analogReadMilliVolts]VOL:%d\n", temp);
 
     return temp;
 }
