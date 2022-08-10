@@ -3,15 +3,14 @@
 ```c
 /*
 创建时间   :2022年4月14日
-作者		:Vincent
-版本		:V1.0
-			
-		
+作者        :Vincent
+版本        :V1.0
+
+
 */
 ```
 
-
-[toc]
+[TOC]
 
 # 概述
 
@@ -27,10 +26,10 @@
 # Keil和SDCC的区别
 
 ## 特殊功能寄存器声明
+
 SDCC不能像Keil一样用sbit和sfr直接再次声明寄存器。
 
 ```c
-
 //Keil
 
 sbit LED0 = P1^0;
@@ -40,7 +39,6 @@ sfr LED = P1;
 
 #define LED0 P1_0;
 #define LED P1;
-
 ```
 
 ## 延时

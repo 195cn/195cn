@@ -1,3 +1,5 @@
+# 004 Pico自动档欧姆表(MicroPython平台)
+
 # 起因
 
 之前是先选用ESP32，因为公司大部分产品都是这个，也有两年的软件开发经验。但是处于对国产芯片的不信任，和一些使用过程不良体验，比如之前提到的ADC问题，就不考虑继续用了。我也基本不用联网相关的东西，主要做电机控制或者功率器件控制（3D打印相关），非要联网加个8266小板档AT模块用也没什么问题。
@@ -137,9 +139,6 @@ def ohum2temperature(ohum):
 
     print("Temperature " + str(temperature) + " C")
     return temperature
-
 ```
-
-
 
 ![](http://a1.qpic.cn/psc?/V11Sftcd4Zm0S7/ruAMsa53pVQWN7FLK88i5r2LeDlDaWR3UB2EUkZLfyENgY7J1MQrKHlifUr3.li2JmDfdffF.t0AxSv493KOezVHfIq5o*nUA9.ByL3TsAM!/c&ek=1&kp=1&pt=0&bo=gAegBYAHoAUWECA!&tl=3&vuin=1947356752&tm=1659387600&dis_t=1659389357&dis_k=7d034ae1700c3e53641d85aace1a1871&sce=60-2-2&rf=viewer_311)

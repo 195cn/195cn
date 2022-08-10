@@ -3,30 +3,36 @@
 ```c
 /*
 创建时间   :2022年4月3日
-作者		:195
-版本		:V1.1
-			
-		V1.1: 修改图片名称
+作者        :195
+版本        :V1.1
+
+        V1.1: 修改图片名称
 */
 ```
 
-
-
-[toc]
-
+[TOC]
 
 # 概述
+
 根据客户编写的教程，从uPycraft迁移到Thonny上
 主要内容包括：
+
 - 软件安装及设置
+
 - 固件烧录
+
 - 连接
+
 - 程序烧录
+
 - 生产烧录
-# Thonny软件安装及设置
-## 下载安装
-下载网址：
-https://thonny.org/
+  
+  # Thonny软件安装及设置
+  
+  ## 下载安装
+  
+  下载网址：
+  https://thonny.org/
 
 一路下一步就行。
 
@@ -35,7 +41,9 @@ https://thonny.org/
 ![](md_pic/pic2.jpg)
 
 装完了。
+
 ## 语言及开发板设置
+
 然后打开Thonny。
 在工具栏选择“工具”，选择“设置”，如果是英文版则“Tool”，“Option”
 弹出设置窗口，在第一个选项卡”常规“里面有语言设置。
@@ -46,7 +54,6 @@ https://thonny.org/
 选择第二栏解释器，选择开发板和端口。ESP32的板选择MicroPython(ESP32)，Pico的板选择MicroPython(Raspberry Pi Pico)
 
 ![](md_pic/pic4.jpg)
-
 
 选择端口，建议使用Auto即自动选择端口。
 
@@ -96,4 +103,3 @@ https://thonny.org/
 如果之前有程序，会提示是否覆盖，选择确定就行。
 
 ![](md_pic/pic11.jpg)
-
