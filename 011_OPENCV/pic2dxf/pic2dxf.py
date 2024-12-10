@@ -7,7 +7,11 @@ from ezdxf.entities import LWPolyline
 
 # 这个适合不同色块的pic1.png，需要大对比度
 
-pic_name = 'tuzhijiance/result.png'
+INPUT_NAME = 'input/pic7.png'
+OUTPUT_NAME = 'output/pic7.dxf'
+
+
+pic_name = INPUT_NAME
 
 img=cv2.imread(pic_name)
 # img=cv2.imread(pic_name,cv2.IMREAD_GRAYSCALE)
@@ -60,4 +64,4 @@ for contour in contours:
 
 
 # 保存 DXF 文件  
-doc.saveas("tuzhijiance/result.dxf")
+doc.saveas(OUTPUT_NAME)
